@@ -13,6 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "default", "default", "{2345
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsTool.Sdk", "src\AwsTool.Sdk\AwsTool.Sdk.csproj", "{74D2B8B5-8555-45E1-8BE9-4846FBE8077C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{F06E7193-FABC-4A94-A010-80A6B0625235}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{A7D1822F-1FC3-4474-8B97-E3DE17593204}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +30,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{74D2B8B5-8555-45E1-8BE9-4846FBE8077C} = {3D5D737F-4C31-4FAB-B1FD-18490CF6DB9C}
+		{A7D1822F-1FC3-4474-8B97-E3DE17593204} = {F06E7193-FABC-4A94-A010-80A6B0625235}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{74D2B8B5-8555-45E1-8BE9-4846FBE8077C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
