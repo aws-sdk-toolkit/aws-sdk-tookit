@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Aws.Sdk.Toolkit;
+namespace AwsTool.Sdk;
 
 [ExcludeFromCodeCoverage]
 public static class AwsDefaultSettings

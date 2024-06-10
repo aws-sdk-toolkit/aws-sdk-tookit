@@ -5,13 +5,13 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3D5D737F-4C31-4FAB-B1FD-18490CF6DB9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aws.Sdk.Toolkit", "src\Aws.Sdk.Toolkit\Aws.Sdk.Toolkit.csproj", "{C71A69CA-1E47-4AE7-82EC-F293D210D811}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "default", "default", "{23459BD8-0FB6-400C-AA54-C18A4D9447F6}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsTool.Sdk", "src\AwsTool.Sdk\AwsTool.Sdk.csproj", "{74D2B8B5-8555-45E1-8BE9-4846FBE8077C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,12 +22,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{C71A69CA-1E47-4AE7-82EC-F293D210D811} = {3D5D737F-4C31-4FAB-B1FD-18490CF6DB9C}
+		{74D2B8B5-8555-45E1-8BE9-4846FBE8077C} = {3D5D737F-4C31-4FAB-B1FD-18490CF6DB9C}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C71A69CA-1E47-4AE7-82EC-F293D210D811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C71A69CA-1E47-4AE7-82EC-F293D210D811}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C71A69CA-1E47-4AE7-82EC-F293D210D811}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C71A69CA-1E47-4AE7-82EC-F293D210D811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74D2B8B5-8555-45E1-8BE9-4846FBE8077C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D2B8B5-8555-45E1-8BE9-4846FBE8077C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D2B8B5-8555-45E1-8BE9-4846FBE8077C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D2B8B5-8555-45E1-8BE9-4846FBE8077C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
