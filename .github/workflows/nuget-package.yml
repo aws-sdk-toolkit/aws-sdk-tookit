@@ -1,0 +1,35 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: NuGet Generation
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Update NuGet package
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1
+        with:
+          source-url: https://nuget.pkg.github.com/AwsTool.Sdk/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.NUGET_PACKAGE}}        
+          
+      - name: Build solution and generate NuGet package
+        run: |  
+          cd ./src/AwsTool.Sdk
+          dotnet pack -c Release -o nuget
+
+      - name: Push generated package to GitHub registry
+        run: dotnet nuget push ./src/AwsTool.Sdk/nuget/*.nupkg --skip-duplicate --no-symbols true
