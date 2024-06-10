@@ -32,4 +32,4 @@ jobs:
           dotnet pack -c Release -o nuget
 
       - name: Push generated package to GitHub registry
-        run: dotnet nuget push ./src/AwsTool.Sdk/nuget/*.nupkg --skip-duplicate --no-symbols true
+        run: dotnet nuget push ./src/AwsTool.Sdk/nuget/*.nupkg --skip-duplicate --no-symbols true --api-key ${{env.NUGET_AUTH_TOKEN}} 
