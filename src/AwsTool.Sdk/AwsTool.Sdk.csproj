@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Version>1.0.0-beta1</Version>
+        <Version>1.0.0-beta2</Version>
         <TargetFramework>net8.0</TargetFramework>
         <RootNamespace>AwsTool.Sdk</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageTags>AWS</PackageTags>
         <PackageDescription>Responsible for delivering the minimum requirements for integration with AWS services.</PackageDescription>
+        <RepositoryUrl>https://github.com/aws-sdk-toolkit/aws-sdk-toolkit</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
