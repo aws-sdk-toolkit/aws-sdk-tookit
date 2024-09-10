@@ -8,6 +8,7 @@
         <Nullable>enable</Nullable>
         <PackageTags>AWS</PackageTags>
         <PackageDescription>Responsible for delivering the minimum requirements for integration with AWS services.</PackageDescription>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/aws-sdk-toolkit/aws-sdk-toolkit</RepositoryUrl>
     </PropertyGroup>
 

@@ -1,35 +1,38 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+name: Build and Publish NuGet Package
 
-name: NuGet Publish
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    types: [closed]
     branches:
       - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Update NuGet package
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup .NET Core @ Latest
-        uses: actions/setup-dotnet@v1
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
         with:
-          source-url: https://nuget.pkg.github.com/AwsTool.Sdk/index.json
-        env:
-          NUGET_AUTH_TOKEN: ${{secrets.NUGET_PACKAGE}}        
-          
-      - name: Build solution and generate NuGet package
-        run: |  
-          cd ./src/AwsTool.Sdk
-          dotnet pack -c Release -o nuget
+          dotnet-version: '8.x'
 
-      - name: Push generated package to GitHub registry
-        run: dotnet nuget push ./src/AwsTool.Sdk/nuget/*.nupkg --skip-duplicate --no-symbols true --api-key ${{env.NUGET_AUTH_TOKEN}} 
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Copy README.md to project directory
+        run: cp README.md src/AwsTool.Sdk/
+
+      - name: List files in project directory
+        run: ls -la src/AwsTool.Sdk/
+
+      - name: Build the project
+        run: dotnet build --configuration Release --no-restore src/AwsTool.Sdk/AwsTool.Sdk.csproj
+
+      - name: Pack the project
+        run: dotnet pack --configuration Release --no-build --output ./nupkg src/AwsTool.Sdk/AwsTool.Sdk.csproj
+
+      - name: Publish NuGet Package
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push "./nupkg/*.nupkg" --api-key $NUGET_API_KEY --source "https://api.nuget.org/v3/index.json"
